@@ -16,7 +16,7 @@ const GameBoard = (() => {
     gameGrid.forEach(block => {
       const blockElement = document.createElement("div");
       const blockContent = document.createElement('p');
-
+      blockContent.setAttribute('data-index', block.index);
       blockContent.textContent = block.symbol;
       blockElement.append(blockContent);
       gridElement.append(blockElement);
