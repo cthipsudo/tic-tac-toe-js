@@ -6,17 +6,18 @@
   justify-content: center;
   gap: 2vw;
   background-color: #000;
-
   padding: 2vw 0;
   height: auto;
   width: 100%;
 }
 
 .game-board div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2%;
   background-color: #fff;
   font-size: 8rem;
-  text-align: center;
-
   height: auto;
   width: calc(92vw/3);
 }

@@ -9,12 +9,17 @@ const GameBoard = (() => {
   const showTurnOrder = () => turnOrder;
   const generateGame = () => {
     for (let i = 0; i < 9; i++) {
-      const blockElement = document.createElement("div");
-      blockElement.textContent = i%2 != 0 ? 'o' : 'x';
-      gameGrid.push(blockElement);
+      let symbol = i%2 != 0 ? 'x' : 'o';
+      const block = blockFactory(symbol, i, true);
+      gameGrid.push(block);
     }
     gameGrid.forEach(block => {
-      gridElement.append(block);
+      const blockElement = document.createElement("div");
+      const blockContent = document.createElement('p');
+
+      blockContent.textContent = block.symbol;
+      blockElement.append(blockContent);
+      gridElement.append(blockElement);
     });
   };
   return {
@@ -25,6 +30,14 @@ const GameBoard = (() => {
     generateGame,
   };
 })();
+
+const blockFactory = (symbol, index, placedOrNot) => {
+  return{
+    symbol,
+    index,
+    placedOrNot
+  }
+}
 
 // Factory function
 const playerFactory = (symbol, score) => {
