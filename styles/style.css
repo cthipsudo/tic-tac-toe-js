@@ -1,6 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap");
 
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  background-color: #000;
 
+  padding: 2vw 0;
+  height: auto;
+  width: 100%;
+}
+
+.game-board div {
+  background-color: #fff;
+  font-size: 8rem;
+  text-align: center;
+
+  height: auto;
+  width: calc(92vw/3);
+}
 
 body *,
 body {
