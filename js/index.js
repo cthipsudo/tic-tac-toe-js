@@ -48,6 +48,10 @@ const GameBoard = (() => {
 
   const updateTurn = () => {
     turnOrder++;
+    const turnElement = document.querySelector('#turn-count');
+    const playerElement = document.querySelector('#current-player');
+    turnElement.textContent = turnOrder;
+    playerElement.textContent = turnOrder % 2 != 0 ? '2' : '1';
   };
   return {
     win,
